@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        {{--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">--}}
 
         <!-- Styles -->
         <style>
@@ -79,9 +82,10 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content" id="app">
                 <div class="title m-b-md">
                     Laravel
+                    <example-component></example-component>
                 </div>
 
                 <div class="links">
