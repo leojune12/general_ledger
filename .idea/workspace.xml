@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9beca4c1-e327-439e-846f-0caa8332e6c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/default/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -142,9 +144,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../071320/SGCPortal - 071320" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development\webFiles\projects\general_ledger\resources\views\auth" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\development\webFiles\projects\general_ledger\resources\views\auth\default" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -178,7 +188,8 @@
       <workItem from="1596690234886" duration="9104000" />
       <workItem from="1596706201509" duration="1388000" />
       <workItem from="1597040630291" duration="2789000" />
-      <workItem from="1597057528714" duration="8474000" />
+      <workItem from="1597057528714" duration="9928000" />
+      <workItem from="1597112498107" duration="6042000" />
     </task>
     <servers />
   </component>

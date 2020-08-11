@@ -23,12 +23,43 @@
         body {
             font-family: Arial, Helvetica, sans-serif !important;
         }
+
+        {{--remove default scrollbar in vuetify--}}
+        html { overflow-y: auto !important; }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        button {
+            outline: none !important;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
     </style>
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{--<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -81,7 +112,23 @@
 
         <main class="py-4">
             @yield('content')
-        </main>
+        </main>--}}
+        @auth
+
+        <v-app>
+            <navigation-drawer></navigation-drawer>
+            <app-bar></app-bar>
+            <v-main>
+                @yield('content')
+            </v-main>
+        </v-app>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+
+        @endauth
+
     </div>
 </body>
 </html>

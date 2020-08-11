@@ -1,5 +1,9 @@
 let state = {
-    data: 'test data'
+    data: 'test data',
+
+    drawer: null,
+
+
 }
 
 export default state
