@@ -7,7 +7,7 @@
 
         >
             <v-card-title>
-                Account Codes
+                Project Codes
                 <v-spacer></v-spacer>
                 <v-text-field
                     v-model="search"
@@ -20,7 +20,7 @@
             </v-card-title>
             <v-data-table
                 :headers="headers"
-                :items="accountCodes"
+                :items="projectCodes"
                 :search="search"
                 :loading="loading"
                 :loading-text="loadingText"
@@ -93,7 +93,7 @@
                     @submit.prevent
                 >
                     <v-card-title>
-                        <span class="headline">New Account Code</span>
+                        <span class="headline">New Project Code</span>
                         <v-spacer></v-spacer>
                         <v-btn icon @click="closeCreateDialog">
                             <v-icon>mdi-close</v-icon>
@@ -144,7 +144,7 @@
                     @submit.prevent
                 >
                     <v-card-title>
-                        <span class="headline">Edit Account Code</span>
+                        <span class="headline">Edit Project Code</span>
                         <v-spacer></v-spacer>
                         <v-btn icon @click="closeEditDialog">
                             <v-icon>mdi-close</v-icon>
@@ -184,7 +184,7 @@
 
         <v-dialog v-model="deleteDialog" persistent max-width="290">
             <v-card>
-                <v-card-title class="headline">Delete Account Code</v-card-title>
+                <v-card-title class="headline">Delete Project Code</v-card-title>
                 <v-card-text>Delete {{ deleteItem.description }}?</v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
@@ -199,11 +199,11 @@
 
 <script>
     export default {
-        name: "ViewAccountCodes",
+        name: "ViewProjectCodes",
 
         mounted() {
             //make drawer link active
-            this.$store.dispatch('SET_DRAWER_LINKS', 'accountCodes');
+            this.$store.dispatch('SET_DRAWER_LINKS', 'projectCodes');
 
             this.fetchData();
         },
@@ -229,7 +229,7 @@
                     }
                 ],
 
-                accountCodes: [],
+                projectCodes: [],
                 loading: true,
                 loadingText: 'Loading. Please wait...',
 
@@ -258,12 +258,12 @@
         methods: {
             fetchData(payload) {
                 if (payload) {
-                    this.accountCodes = payload
+                    this.projectCodes = payload
                 } else {
-                    axios.get('/api/account-codes')
+                    axios.get('/api/project-codes')
                         .then(response => {
                             console.log(response.data.data)
-                            this.accountCodes = response.data.data
+                            this.projectCodes = response.data.data
                             this.loading = false
                         })
                         .catch(error => {
@@ -291,7 +291,7 @@
 
             saveNewItem() {
                 this.$store.dispatch('OPEN_LOADING_DIALOG')
-                axios.post('/api/account-codes', this.newItem)
+                axios.post('/api/project-codes', this.newItem)
                     .then(response => {
                         this.fetchData(response.data.data)
                         this.$store.dispatch('SUCCESS_SNACKBAR', 'Success')
@@ -325,7 +325,7 @@
 
             updateAccountCode() {
                 this.$store.dispatch('OPEN_LOADING_DIALOG')
-                axios.put('/api/account-codes/'+this.editItem.id, this.editItem)
+                axios.put('/api/project-codes/'+this.editItem.id, this.editItem)
                     .then(response => {
                         this.fetchData(response.data.data)
                         this.$store.dispatch('SUCCESS_SNACKBAR', 'Success')
@@ -351,7 +351,7 @@
 
             deleteThisItem() {
                 this.$store.dispatch('OPEN_LOADING_DIALOG')
-                axios.delete('/api/account-codes/'+this.deleteItem.id)
+                axios.delete('/api/project-codes/'+this.deleteItem.id)
                     .then(response => {
                         if (response.data.deleted) {
                             this.fetchData()

@@ -105,7 +105,7 @@
             <v-list-group
                 prepend-icon="mdi-cog"
                 no-action
-                :value="drawerLinks.accountCodes || drawerLinks.productCodes"
+                :value="drawerLinks.accountCodes || drawerLinks.projectCodes"
             >
                 <template v-slot:activator>
                     <v-list-item-content>
@@ -123,11 +123,11 @@
                 </v-list-item>
 
                 <v-list-item
-                    href="/product-codes"
-                    :class="{ 'v-list-item--active': drawerLinks.productCodes }"
+                    href="/project-codes"
+                    :class="{ 'v-list-item--active': drawerLinks.projectCodes }"
                 >
                     <v-list-item-content>
-                        <v-list-item-title>Product Codes</v-list-item-title>
+                        <v-list-item-title>Project Codes</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list-group>

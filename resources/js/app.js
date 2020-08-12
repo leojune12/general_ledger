@@ -21,7 +21,7 @@ Vue.component('view-dashboard', require('./views/dashboard/ViewDashboard').defau
 Vue.component('view-ledgers', require('./views/ledgers/ViewLedgers').default);
 
 Vue.component('view-account-codes', require('./views/codes/ViewAccountCodes').default);
-Vue.component('view-product-codes', require('./views/codes/ViewProductCodes').default);
+Vue.component('view-project-codes', require('./views/codes/ViewProjectCodes').default);
 
 const app = new Vue({
     el: '#app',

@@ -10,7 +10,7 @@ let state = {
 
         accountCodes: false,
 
-        productCodes: false,
+        projectCodes: false,
 
     },
 

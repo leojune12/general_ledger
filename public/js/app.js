@@ -2738,102 +2738,6 @@ __webpack_require__.r(__webpack_exports__);
         value: 'actions',
         sortable: false
       }],
-      headers1: [{
-        text: 'Dessert (100g serving)',
-        align: 'start',
-        sortable: false,
-        value: 'name'
-      }, {
-        text: 'Calories',
-        value: 'calories'
-      }, {
-        text: 'Fat (g)',
-        value: 'fat'
-      }, {
-        text: 'Carbs (g)',
-        value: 'carbs'
-      }, {
-        text: 'Protein (g)',
-        value: 'protein'
-      }, {
-        text: 'Iron (%)',
-        value: 'iron'
-      }, {
-        text: 'Actions',
-        value: 'actions',
-        sortable: false
-      }],
-      desserts: [{
-        name: 'Frozen Yogurt',
-        calories: 159,
-        fat: 6.0,
-        carbs: 24,
-        protein: 4.0,
-        iron: '1%'
-      }, {
-        name: 'Ice cream sandwich',
-        calories: 237,
-        fat: 9.0,
-        carbs: 37,
-        protein: 4.3,
-        iron: '1%'
-      }, {
-        name: 'Eclair',
-        calories: 262,
-        fat: 16.0,
-        carbs: 23,
-        protein: 6.0,
-        iron: '7%'
-      }, {
-        name: 'Cupcake',
-        calories: 305,
-        fat: 3.7,
-        carbs: 67,
-        protein: 4.3,
-        iron: '8%'
-      }, {
-        name: 'Gingerbread',
-        calories: 356,
-        fat: 16.0,
-        carbs: 49,
-        protein: 3.9,
-        iron: '16%'
-      }, {
-        name: 'Jelly bean',
-        calories: 375,
-        fat: 0.0,
-        carbs: 94,
-        protein: 0.0,
-        iron: '0%'
-      }, {
-        name: 'Lollipop',
-        calories: 392,
-        fat: 0.2,
-        carbs: 98,
-        protein: 0,
-        iron: '2%'
-      }, {
-        name: 'Honeycomb',
-        calories: 408,
-        fat: 3.2,
-        carbs: 87,
-        protein: 6.5,
-        iron: '45%'
-      }, {
-        name: 'Donut',
-        calories: 452,
-        fat: 25.0,
-        carbs: 51,
-        protein: 4.9,
-        iron: '22%'
-      }, {
-        name: 'KitKat',
-        calories: 518,
-        fat: 26.0,
-        carbs: 65,
-        protein: 7,
-        iron: '6%'
-      }],
       accountCodes: [],
       loading: true,
       loadingText: 'Loading. Please wait...',
@@ -2854,11 +2758,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    fetchData: function fetchData(accountCode) {
+    fetchData: function fetchData(payload) {
       var _this = this;
 
-      if (accountCode) {
-        this.accountCodes = accountCode;
+      if (payload) {
+        this.accountCodes = payload;
       } else {
         axios.get('/api/account-codes').then(function (response) {
           console.log(response.data.data);
@@ -2881,10 +2785,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     validateCreateForm: function validateCreateForm() {
       if (this.$refs.createForm.validate()) {
-        this.saveNewAccountCode();
+        this.saveNewItem();
       }
     },
-    saveNewAccountCode: function saveNewAccountCode() {
+    saveNewItem: function saveNewItem() {
       var _this2 = this;
 
       this.$store.dispatch('OPEN_LOADING_DIALOG');
@@ -2902,8 +2806,8 @@ __webpack_require__.r(__webpack_exports__);
         _this2.$store.dispatch('CLOSE_LOADING_DIALOG');
       });
     },
-    openEditDialog: function openEditDialog(accountCode) {
-      this.editItem = JSON.parse(JSON.stringify(accountCode));
+    openEditDialog: function openEditDialog(payload) {
+      this.editItem = JSON.parse(JSON.stringify(payload));
       this.editDialog = true;
     },
     closeEditDialog: function closeEditDialog() {
@@ -2934,8 +2838,8 @@ __webpack_require__.r(__webpack_exports__);
         _this3.$store.dispatch('CLOSE_LOADING_DIALOG');
       });
     },
-    openDeleteDialog: function openDeleteDialog(accountCode) {
-      this.deleteItem = accountCode;
+    openDeleteDialog: function openDeleteDialog(payload) {
+      this.deleteItem = payload;
       this.deleteDialog = true;
     },
     closeDeleteDialog: function closeDeleteDialog() {
@@ -2968,9 +2872,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/codes/ViewProductCodes.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/codes/ViewProjectCodes.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/codes/ViewProductCodes.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/codes/ViewProjectCodes.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2983,11 +2887,352 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ViewProductCodes",
+  name: "ViewProjectCodes",
   mounted: function mounted() {
     //make drawer link active
-    this.$store.dispatch('SET_DRAWER_LINKS', 'productCodes');
+    this.$store.dispatch('SET_DRAWER_LINKS', 'projectCodes');
+    this.fetchData();
+  },
+  data: function data() {
+    return {
+      requiredRules: [function (v) {
+        return !!v || 'This field is required';
+      }, function (v) {
+        return v && v.length <= 50 || 'This field must not more than 50 characters';
+      }],
+      search: '',
+      headers: [{
+        text: 'Description',
+        align: 'start',
+        value: 'description'
+      }, {
+        text: 'Actions',
+        value: 'actions',
+        sortable: false
+      }],
+      projectCodes: [],
+      loading: true,
+      loadingText: 'Loading. Please wait...',
+      createDialog: false,
+      validCreate: true,
+      newItem: {
+        description: ''
+      },
+      editDialog: false,
+      validEdit: true,
+      editItem: {
+        description: ''
+      },
+      deleteDialog: false,
+      deleteItem: {
+        description: ''
+      }
+    };
+  },
+  methods: {
+    fetchData: function fetchData(payload) {
+      var _this = this;
+
+      if (payload) {
+        this.projectCodes = payload;
+      } else {
+        axios.get('/api/project-codes').then(function (response) {
+          console.log(response.data.data);
+          _this.projectCodes = response.data.data;
+          _this.loading = false;
+        })["catch"](function (error) {
+          console.log(error);
+
+          _this.$store.dispatch('ERROR_SNACKBAR', 'Something went wrong');
+        });
+      }
+    },
+    openCreateDialog: function openCreateDialog() {
+      this.createDialog = true;
+    },
+    closeCreateDialog: function closeCreateDialog() {
+      this.createDialog = false;
+      this.$refs.createForm.resetValidation();
+      this.$refs.createForm.reset();
+    },
+    validateCreateForm: function validateCreateForm() {
+      if (this.$refs.createForm.validate()) {
+        this.saveNewItem();
+      }
+    },
+    saveNewItem: function saveNewItem() {
+      var _this2 = this;
+
+      this.$store.dispatch('OPEN_LOADING_DIALOG');
+      axios.post('/api/project-codes', this.newItem).then(function (response) {
+        _this2.fetchData(response.data.data);
+
+        _this2.$store.dispatch('SUCCESS_SNACKBAR', 'Success');
+      })["catch"](function (error) {
+        _this2.$store.dispatch('ERROR_SNACKBAR', 'Something went wrong');
+
+        console.log(error);
+      })["finally"](function () {
+        _this2.closeCreateDialog();
+
+        _this2.$store.dispatch('CLOSE_LOADING_DIALOG');
+      });
+    },
+    openEditDialog: function openEditDialog(payload) {
+      this.editItem = JSON.parse(JSON.stringify(payload));
+      this.editDialog = true;
+    },
+    closeEditDialog: function closeEditDialog() {
+      this.editDialog = false;
+      this.$refs.editForm.resetValidation();
+      this.$refs.editForm.reset();
+    },
+    validateEditForm: function validateEditForm() {
+      if (this.$refs.editForm.validate()) {
+        this.updateAccountCode();
+      }
+    },
+    updateAccountCode: function updateAccountCode() {
+      var _this3 = this;
+
+      this.$store.dispatch('OPEN_LOADING_DIALOG');
+      axios.put('/api/project-codes/' + this.editItem.id, this.editItem).then(function (response) {
+        _this3.fetchData(response.data.data);
+
+        _this3.$store.dispatch('SUCCESS_SNACKBAR', 'Success');
+      })["catch"](function (error) {
+        _this3.$store.dispatch('ERROR_SNACKBAR', 'Something went wrong');
+
+        console.log(error);
+      })["finally"](function () {
+        _this3.closeEditDialog();
+
+        _this3.$store.dispatch('CLOSE_LOADING_DIALOG');
+      });
+    },
+    openDeleteDialog: function openDeleteDialog(payload) {
+      this.deleteItem = payload;
+      this.deleteDialog = true;
+    },
+    closeDeleteDialog: function closeDeleteDialog() {
+      this.deleteDialog = false;
+    },
+    deleteThisItem: function deleteThisItem() {
+      var _this4 = this;
+
+      this.$store.dispatch('OPEN_LOADING_DIALOG');
+      axios["delete"]('/api/project-codes/' + this.deleteItem.id).then(function (response) {
+        if (response.data.deleted) {
+          _this4.fetchData();
+
+          _this4.$store.dispatch('SUCCESS_SNACKBAR', 'Success');
+        } else {
+          _this4.$store.dispatch('ERROR_SNACKBAR', 'Can\'t delete. There is a ledger using this code');
+        }
+      })["catch"](function (error) {
+        _this4.$store.dispatch('ERROR_SNACKBAR', 'Something went wrong');
+
+        console.log(error);
+      })["finally"](function () {
+        _this4.closeDeleteDialog();
+
+        _this4.$store.dispatch('CLOSE_LOADING_DIALOG');
+      });
+    }
   }
 });
 
@@ -23085,7 +23330,7 @@ var render = function() {
                 "prepend-icon": "mdi-cog",
                 "no-action": "",
                 value:
-                  _vm.drawerLinks.accountCodes || _vm.drawerLinks.productCodes
+                  _vm.drawerLinks.accountCodes || _vm.drawerLinks.projectCodes
               },
               scopedSlots: _vm._u([
                 {
@@ -23127,14 +23372,14 @@ var render = function() {
                 "v-list-item",
                 {
                   class: {
-                    "v-list-item--active": _vm.drawerLinks.productCodes
+                    "v-list-item--active": _vm.drawerLinks.projectCodes
                   },
-                  attrs: { href: "/product-codes" }
+                  attrs: { href: "/project-codes" }
                 },
                 [
                   _c(
                     "v-list-item-content",
-                    [_c("v-list-item-title", [_vm._v("Product Codes")])],
+                    [_c("v-list-item-title", [_vm._v("Project Codes")])],
                     1
                   )
                 ],
@@ -23701,9 +23946,9 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/codes/ViewProductCodes.vue?vue&type=template&id=68c92be4&scoped=true&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/codes/ViewProjectCodes.vue?vue&type=template&id=f67e060c&scoped=true&":
 /*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/codes/ViewProductCodes.vue?vue&type=template&id=68c92be4&scoped=true& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/codes/ViewProjectCodes.vue?vue&type=template&id=f67e060c&scoped=true& ***!
   \********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -23716,7 +23961,527 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("v-container", [_vm._v("\n    Product Codes\n")])
+  return _c(
+    "v-container",
+    { staticClass: "px-11 py-5", attrs: { fluid: "" } },
+    [
+      _c(
+        "v-card",
+        [
+          _c(
+            "v-card-title",
+            [
+              _vm._v("\n            Project Codes\n            "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c("v-text-field", {
+                attrs: {
+                  "append-icon": "mdi-magnify",
+                  label: "Search",
+                  "single-line": "",
+                  "hide-details": "",
+                  clearable: ""
+                },
+                model: {
+                  value: _vm.search,
+                  callback: function($$v) {
+                    _vm.search = $$v
+                  },
+                  expression: "search"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-data-table", {
+            staticClass: "mb-16",
+            attrs: {
+              headers: _vm.headers,
+              items: _vm.projectCodes,
+              search: _vm.search,
+              loading: _vm.loading,
+              "loading-text": _vm.loadingText
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "item.actions",
+                fn: function(ref) {
+                  var item = ref.item
+                  return [
+                    _c(
+                      "v-menu",
+                      {
+                        attrs: { bottom: "", left: "" },
+                        scopedSlots: _vm._u(
+                          [
+                            {
+                              key: "activator",
+                              fn: function(ref) {
+                                var on = ref.on
+                                var attrs = ref.attrs
+                                return [
+                                  _c(
+                                    "v-btn",
+                                    _vm._g(
+                                      _vm._b(
+                                        { attrs: { icon: "" } },
+                                        "v-btn",
+                                        attrs,
+                                        false
+                                      ),
+                                      on
+                                    ),
+                                    [
+                                      _c("v-icon", [
+                                        _vm._v("mdi-dots-vertical")
+                                      ])
+                                    ],
+                                    1
+                                  )
+                                ]
+                              }
+                            }
+                          ],
+                          null,
+                          true
+                        )
+                      },
+                      [
+                        _vm._v(" "),
+                        _c(
+                          "v-list",
+                          { staticClass: "py-0", attrs: { dense: "" } },
+                          [
+                            _c(
+                              "v-list-item",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    return _vm.openEditDialog(item)
+                                  }
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-list-item-icon",
+                                  [_c("v-icon", [_vm._v("mdi-pencil")])],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item-content",
+                                  [_c("v-list-item-title", [_vm._v("Edit")])],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-item",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    return _vm.openDeleteDialog(item)
+                                  }
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-list-item-icon",
+                                  [_c("v-icon", [_vm._v("mdi-delete")])],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item-content",
+                                  [_c("v-list-item-title", [_vm._v("Delete")])],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                }
+              }
+            ])
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-btn",
+        {
+          attrs: {
+            bottom: "",
+            color: "pink",
+            dark: "",
+            fab: "",
+            fixed: "",
+            right: ""
+          },
+          on: { click: _vm.openCreateDialog }
+        },
+        [_c("v-icon", [_vm._v("mdi-plus")])],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            persistent: "",
+            "max-width": "350",
+            fullscreen: !_vm.$vuetify.breakpoint.smAndUp
+          },
+          model: {
+            value: _vm.createDialog,
+            callback: function($$v) {
+              _vm.createDialog = $$v
+            },
+            expression: "createDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-form",
+                {
+                  ref: "createForm",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                    }
+                  },
+                  model: {
+                    value: _vm.validCreate,
+                    callback: function($$v) {
+                      _vm.validCreate = $$v
+                    },
+                    expression: "validCreate"
+                  }
+                },
+                [
+                  _c(
+                    "v-card-title",
+                    [
+                      _c("span", { staticClass: "headline" }, [
+                        _vm._v("New Project Code")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: { click: _vm.closeCreateDialog }
+                        },
+                        [_c("v-icon", [_vm._v("mdi-close")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider", { staticClass: "my-0" }),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    { staticClass: "px-0 px-md-5 py-0" },
+                    [
+                      _c(
+                        "v-container",
+                        [
+                          _c(
+                            "v-row",
+                            [
+                              _c(
+                                "v-col",
+                                { attrs: { cols: "12" } },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      counter: 50,
+                                      rules: _vm.requiredRules,
+                                      label: "Description",
+                                      required: ""
+                                    },
+                                    model: {
+                                      value: _vm.newItem.description,
+                                      callback: function($$v) {
+                                        _vm.$set(
+                                          _vm.newItem,
+                                          "description",
+                                          $$v
+                                        )
+                                      },
+                                      expression: "newItem.description"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider", { staticClass: "my-0" }),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", text: "" },
+                          on: { click: _vm.closeCreateDialog }
+                        },
+                        [_vm._v("Close")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", text: "" },
+                          on: { click: _vm.validateCreateForm }
+                        },
+                        [_vm._v("Save")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            persistent: "",
+            "max-width": "350",
+            fullscreen: !_vm.$vuetify.breakpoint.smAndUp
+          },
+          model: {
+            value: _vm.editDialog,
+            callback: function($$v) {
+              _vm.editDialog = $$v
+            },
+            expression: "editDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-form",
+                {
+                  ref: "editForm",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                    }
+                  },
+                  model: {
+                    value: _vm.validEdit,
+                    callback: function($$v) {
+                      _vm.validEdit = $$v
+                    },
+                    expression: "validEdit"
+                  }
+                },
+                [
+                  _c(
+                    "v-card-title",
+                    [
+                      _c("span", { staticClass: "headline" }, [
+                        _vm._v("Edit Project Code")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: { click: _vm.closeEditDialog }
+                        },
+                        [_c("v-icon", [_vm._v("mdi-close")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider", { staticClass: "my-0" }),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    { staticClass: "px-0 px-md-5 py-0" },
+                    [
+                      _c(
+                        "v-container",
+                        [
+                          _c(
+                            "v-row",
+                            [
+                              _c(
+                                "v-col",
+                                { attrs: { cols: "12" } },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      counter: 50,
+                                      rules: _vm.requiredRules,
+                                      label: "Description",
+                                      required: ""
+                                    },
+                                    model: {
+                                      value: _vm.editItem.description,
+                                      callback: function($$v) {
+                                        _vm.$set(
+                                          _vm.editItem,
+                                          "description",
+                                          $$v
+                                        )
+                                      },
+                                      expression: "editItem.description"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider", { staticClass: "my-0" }),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", text: "" },
+                          on: { click: _vm.closeEditDialog }
+                        },
+                        [_vm._v("Close")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue darken-1", text: "" },
+                          on: { click: _vm.validateEditForm }
+                        },
+                        [_vm._v("Update")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { persistent: "", "max-width": "290" },
+          model: {
+            value: _vm.deleteDialog,
+            callback: function($$v) {
+              _vm.deleteDialog = $$v
+            },
+            expression: "deleteDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", { staticClass: "headline" }, [
+                _vm._v("Delete Project Code")
+              ]),
+              _vm._v(" "),
+              _c("v-card-text", [
+                _vm._v("Delete " + _vm._s(_vm.deleteItem.description) + "?")
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: { click: _vm.closeDeleteDialog }
+                    },
+                    [_vm._v("Cancel")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "red darken-1", text: "" },
+                      on: { click: _vm.deleteThisItem }
+                    },
+                    [_vm._v("Agree")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -84087,7 +84852,7 @@ Vue.component('miscellaneous', __webpack_require__(/*! ./components/core/Miscell
 Vue.component('view-dashboard', __webpack_require__(/*! ./views/dashboard/ViewDashboard */ "./resources/js/views/dashboard/ViewDashboard.vue")["default"]);
 Vue.component('view-ledgers', __webpack_require__(/*! ./views/ledgers/ViewLedgers */ "./resources/js/views/ledgers/ViewLedgers.vue")["default"]);
 Vue.component('view-account-codes', __webpack_require__(/*! ./views/codes/ViewAccountCodes */ "./resources/js/views/codes/ViewAccountCodes.vue")["default"]);
-Vue.component('view-product-codes', __webpack_require__(/*! ./views/codes/ViewProductCodes */ "./resources/js/views/codes/ViewProductCodes.vue")["default"]);
+Vue.component('view-project-codes', __webpack_require__(/*! ./views/codes/ViewProjectCodes */ "./resources/js/views/codes/ViewProjectCodes.vue")["default"]);
 var app = new Vue({
   el: '#app',
   store: _store_index__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -84616,7 +85381,7 @@ var state = {
     dashboard: false,
     ledger: false,
     accountCodes: false,
-    productCodes: false
+    projectCodes: false
   },
   snackbar: {
     value: false,
@@ -84698,17 +85463,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/views/codes/ViewProductCodes.vue":
+/***/ "./resources/js/views/codes/ViewProjectCodes.vue":
 /*!*******************************************************!*\
-  !*** ./resources/js/views/codes/ViewProductCodes.vue ***!
+  !*** ./resources/js/views/codes/ViewProjectCodes.vue ***!
   \*******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ViewProductCodes_vue_vue_type_template_id_68c92be4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ViewProductCodes.vue?vue&type=template&id=68c92be4&scoped=true& */ "./resources/js/views/codes/ViewProductCodes.vue?vue&type=template&id=68c92be4&scoped=true&");
-/* harmony import */ var _ViewProductCodes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ViewProductCodes.vue?vue&type=script&lang=js& */ "./resources/js/views/codes/ViewProductCodes.vue?vue&type=script&lang=js&");
+/* harmony import */ var _ViewProjectCodes_vue_vue_type_template_id_f67e060c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ViewProjectCodes.vue?vue&type=template&id=f67e060c&scoped=true& */ "./resources/js/views/codes/ViewProjectCodes.vue?vue&type=template&id=f67e060c&scoped=true&");
+/* harmony import */ var _ViewProjectCodes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ViewProjectCodes.vue?vue&type=script&lang=js& */ "./resources/js/views/codes/ViewProjectCodes.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -84718,50 +85483,50 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ViewProductCodes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ViewProductCodes_vue_vue_type_template_id_68c92be4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ViewProductCodes_vue_vue_type_template_id_68c92be4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ViewProjectCodes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ViewProjectCodes_vue_vue_type_template_id_f67e060c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ViewProjectCodes_vue_vue_type_template_id_f67e060c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "68c92be4",
+  "f67e060c",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/views/codes/ViewProductCodes.vue"
+component.options.__file = "resources/js/views/codes/ViewProjectCodes.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/views/codes/ViewProductCodes.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/views/codes/ViewProjectCodes.vue?vue&type=script&lang=js&":
 /*!********************************************************************************!*\
-  !*** ./resources/js/views/codes/ViewProductCodes.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/views/codes/ViewProjectCodes.vue?vue&type=script&lang=js& ***!
   \********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProductCodes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ViewProductCodes.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/codes/ViewProductCodes.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProductCodes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProjectCodes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ViewProjectCodes.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/codes/ViewProjectCodes.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProjectCodes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/views/codes/ViewProductCodes.vue?vue&type=template&id=68c92be4&scoped=true&":
+/***/ "./resources/js/views/codes/ViewProjectCodes.vue?vue&type=template&id=f67e060c&scoped=true&":
 /*!**************************************************************************************************!*\
-  !*** ./resources/js/views/codes/ViewProductCodes.vue?vue&type=template&id=68c92be4&scoped=true& ***!
+  !*** ./resources/js/views/codes/ViewProjectCodes.vue?vue&type=template&id=f67e060c&scoped=true& ***!
   \**************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProductCodes_vue_vue_type_template_id_68c92be4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ViewProductCodes.vue?vue&type=template&id=68c92be4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/codes/ViewProductCodes.vue?vue&type=template&id=68c92be4&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProductCodes_vue_vue_type_template_id_68c92be4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProjectCodes_vue_vue_type_template_id_f67e060c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ViewProjectCodes.vue?vue&type=template&id=f67e060c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/codes/ViewProjectCodes.vue?vue&type=template&id=f67e060c&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProjectCodes_vue_vue_type_template_id_f67e060c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProductCodes_vue_vue_type_template_id_68c92be4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewProjectCodes_vue_vue_type_template_id_f67e060c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

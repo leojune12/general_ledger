@@ -22,7 +22,7 @@ Route::group(['middleware'=>['auth']], function (){
         return view('codes.view-account-codes');
     });
 
-    Route::get('/product-codes', function () {
-        return view('codes.view-product-codes');
+    Route::get('/project-codes', function () {
+        return view('codes.view-project-codes');
     });
 });
