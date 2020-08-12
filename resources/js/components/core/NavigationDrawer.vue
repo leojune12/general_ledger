@@ -72,7 +72,9 @@
             </template>-->
             <v-list-item
                 link
-                class="v-list-item--active"
+                :class="{ 'v-list-item--active': drawerLinks.dashboard }"
+                href="/dashboard"
+                color="primary"
             >
                 <v-list-item-action>
                     <v-icon>mdi-view-dashboard</v-icon>
@@ -86,9 +88,12 @@
 
             <v-list-item
                 link
+                :class="{ 'v-list-item--active': drawerLinks.ledger }"
+                href="/ledgers"
+                color="primary"
             >
                 <v-list-item-action>
-                    <v-icon>mdi-contacts</v-icon>
+                    <v-icon>mdi-view-list</v-icon>
                 </v-list-item-action>
                 <v-list-item-content>
                     <v-list-item-title>
@@ -96,6 +101,36 @@
                     </v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
+
+            <v-list-group
+                prepend-icon="mdi-cog"
+                no-action
+                :value="drawerLinks.accountCodes || drawerLinks.productCodes"
+            >
+                <template v-slot:activator>
+                    <v-list-item-content>
+                        <v-list-item-title>Manage</v-list-item-title>
+                    </v-list-item-content>
+                </template>
+
+                <v-list-item
+                    href="/account-codes"
+                    :class="{ 'v-list-item--active': drawerLinks.accountCodes }"
+                >
+                    <v-list-item-content>
+                        <v-list-item-title>Account Codes</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item
+                    href="/product-codes"
+                    :class="{ 'v-list-item--active': drawerLinks.productCodes }"
+                >
+                    <v-list-item-content>
+                        <v-list-item-title>Product Codes</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list-group>
         </v-list>
     </v-navigation-drawer>
 </template>
@@ -138,6 +173,8 @@
                     { icon: 'mdi-cellphone-link', text: 'App downloads' },
                     { icon: 'mdi-keyboard', text: 'Go to the old version' },
                 ],
+
+                drawerLinks: this.$store.state.drawerLinks,
             }
         },
 

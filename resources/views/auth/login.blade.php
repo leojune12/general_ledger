@@ -12,55 +12,49 @@
     {{--<script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>--}}
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
 
 </head>
 
 <style>
-
+    body {
+        font-family: Arial, Helvetica, sans-serif !important;
+    }
 </style>
 
 <body style="background-color: #ECEFF1;">
     <div style="position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%)">
         <div class="card mx-auto" style="min-width: 300px; width: 320px;">
             <div class="card-header bg-white border-0">
-                <h4 class="text-dark">GENERAL LEDGER</h4>
+                <h4 class="text-dark ">GENERAL LEDGER</h4>
                 <h5><small>Welcome back, please login to your account.</small></h5>
             </div>
             <div class="card-body pb-1 pt-0">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
-                        </div>
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Username"
-                            name="email"
-                            value="{{ old('email') }}"
-                            autocomplete="off"
-                            required
-                        >
-                    </div>
+                    <input
+                        type="text"
+                        class="form-control mb-3"
+                        placeholder="Username"
+                        name="email"
+                        value="{{ old('email') }}"
+                        autocomplete="off"
+                        required
+                    >
 
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
-                        </div>
-                        <input
-                            type="password"
-                            class="form-control"
-                            placeholder="Password"
-                            name="password"
-                            autocomplete="current-password"
-                            required
-                            value="{{ old('password') }}"
-                        >
-                    </div>
+                    <input
+                        type="password"
+                        class="form-control mb-3"
+                        placeholder="Password"
+                        name="password"
+                        autocomplete="current-password"
+                        required
+                        value="{{ old('password') }}"
+                    >
 
                     @if ($errors->any())
                         <div class="alert alert-danger mb-3">
@@ -81,20 +75,5 @@
         </div>
     </div>
 </body>
-
-<script type="application/javascript">
-    $(function () {
-
-        /*$('#submit').attr('disabled', false)
-
-        $('form').submit(function () {
-            $('#submit').attr('disabled', true)
-        })
-
-        $('#login').val('10000000000')
-        $('#password').val('pw@12345')*/
-
-    });
-</script>
 
 </html>

@@ -121,6 +121,7 @@
             <v-main>
                 @yield('content')
             </v-main>
+            <miscellaneous></miscellaneous>
         </v-app>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
