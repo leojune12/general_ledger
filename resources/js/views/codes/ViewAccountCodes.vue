@@ -357,7 +357,7 @@
                             this.fetchData()
                             this.$store.dispatch('SUCCESS_SNACKBAR', 'Success')
                         } else {
-                            this.$store.dispatch('ERROR_SNACKBAR', 'Can\'t delete. There is a ledger using this code')
+                            this.$store.dispatch('ERROR_SNACKBAR', 'Can\'t delete. There is a record using this code')
                         }
                     })
                     .catch(error => {

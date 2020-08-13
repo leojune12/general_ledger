@@ -70,9 +70,9 @@
                     </v-list-item-content>
                 </v-list-item>
             </template>-->
-            <v-list-item
+            <!--<v-list-item
                 link
-                :class="{ 'v-list-item--active': drawerLinks.dashboard }"
+                :class="{ 'v-list-item&#45;&#45;active': drawerLinks.dashboard }"
                 href="/dashboard"
                 color="primary"
             >
@@ -84,12 +84,12 @@
                         Dashboard
                     </v-list-item-title>
                 </v-list-item-content>
-            </v-list-item>
+            </v-list-item>-->
 
             <v-list-item
                 link
                 :class="{ 'v-list-item--active': drawerLinks.ledger }"
-                href="/ledgers"
+                href="/ledger"
                 color="primary"
             >
                 <v-list-item-action>
@@ -97,7 +97,22 @@
                 </v-list-item-action>
                 <v-list-item-content>
                     <v-list-item-title>
-                        Ledgers
+                        Ledger
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+
+            <v-list-item
+                link
+                :class="{ 'v-list-item--active': drawerLinks.dashboard }"
+                color="primary"
+            >
+                <v-list-item-action>
+                    <v-icon>mdi-chart-bar</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>
+                        Reports
                     </v-list-item-title>
                 </v-list-item-content>
             </v-list-item>

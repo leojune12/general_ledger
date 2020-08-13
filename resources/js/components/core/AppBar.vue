@@ -76,9 +76,10 @@
             >
                 <v-list-item
                     link
+                    disabled
                 >
                     <v-list-item-icon>
-                        <v-icon>mdi-account-circle</v-icon>
+                        <v-icon disabled>mdi-account-circle</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Profile</v-list-item-title>

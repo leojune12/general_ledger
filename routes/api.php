@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('auth:api')->group(function () {
 
+    Route::resource('/ledger', 'API\LedgerController');
+
     Route::resource('/account-codes', 'API\Codes\AccountCodeController');
 
     Route::resource('/project-codes', 'API\Codes\ProjectCodeController');

@@ -14,7 +14,7 @@ Route::group(['middleware'=>['auth']], function (){
         return view('dashboard.dashboard');
     });
 
-    Route::get('/ledgers', function () {
+    Route::get('/ledger', function () {
        return view('ledgers.view-ledgers');
     });
 

@@ -11,6 +11,10 @@ import store from "./store/index";
 import vuetify from "../plugins/vuetify";
 import VueRouter from "./routes";
 
+//import moment from 'moment'
+//import moment from 'moment-timezone'
+//moment.tz.setDefault('Asia/Manila')
+
 //Vue.component('example-component', require('./components/ExampleComponent').default);
 //Vue.component('app-layout', require('./components/core/AppLayout').default);
 Vue.component('navigation-drawer', require('./components/core/NavigationDrawer').default);
