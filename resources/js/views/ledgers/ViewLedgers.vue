@@ -111,13 +111,13 @@
                                     <v-dialog
                                         ref="dateEncoded"
                                         v-model="calendarDialog"
-                                        :return-value.sync="today"
+                                        :return-value.sync="newItem.date_encoded"
                                         persistent
                                         width="290px"
                                     >
                                         <template v-slot:activator="{ on, attrs }">
                                             <v-text-field
-                                                v-model="today"
+                                                v-model="newItem.date_encoded"
                                                 label="Date Encoded"
                                                 append-icon="mdi-calendar"
                                                 readonly
@@ -134,7 +134,7 @@
                                         >
                                             <v-spacer></v-spacer>
                                             <v-btn text color="primary" @click="calendarDialog = false">Cancel</v-btn>
-                                            <v-btn text color="primary" @click="saveDate(newItem.date_encoded)">OK</v-btn>
+                                            <v-btn text color="primary" @click="saveDate">OK</v-btn>
                                         </v-date-picker>
                                     </v-dialog>
                                 </v-col>
@@ -432,6 +432,7 @@
             },
 
             openCreateDialog() {
+                this.newItem.date_encoded = this.today
                 this.createDialog = true
             },
 
@@ -441,8 +442,8 @@
                 this.$refs.createForm.reset()
             },
 
-            saveDate(date) {
-                this.$refs.dateEncoded.save(date)
+            saveDate() {
+                this.$refs.dateEncoded.save(this.newItem.date_encoded)
             },
 
             validateCreateForm() {
@@ -452,6 +453,7 @@
             },
 
             saveNewItem() {
+                this.saveDate()
                 this.$store.dispatch('OPEN_LOADING_DIALOG')
                 axios.post('/api/ledger', this.newItem)
                     .then(response => {

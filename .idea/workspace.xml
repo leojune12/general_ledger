@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9beca4c1-e327-439e-846f-0caa8332e6c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/core/AppBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/core/AppBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/core/NavigationDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/core/NavigationDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/codes/ViewAccountCodes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/codes/ViewAccountCodes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/codes/ViewProjectCodes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/codes/ViewProjectCodes.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/ledgers/ViewLedgers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/ledgers/ViewLedgers.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +186,7 @@
       <workItem from="1597112498107" duration="8075000" />
       <workItem from="1597154630290" duration="10278000" />
       <workItem from="1597193726326" duration="38583000" />
-      <workItem from="1597281288925" duration="4283000" />
+      <workItem from="1597281288925" duration="5108000" />
     </task>
     <servers />
   </component>
