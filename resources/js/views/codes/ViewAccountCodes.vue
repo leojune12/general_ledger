@@ -1,10 +1,10 @@
 <template>
     <v-container
         fluid
-        class="px-11 py-5"
+        class="px-md-11 py-md-5 pa-0"
     >
         <v-card
-
+            :flat="!$vuetify.breakpoint.mdAndUp"
         >
             <v-card-title>
                 Account Codes

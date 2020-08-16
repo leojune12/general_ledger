@@ -58,7 +58,7 @@
                         color="grey lighten-2"
                     >
                         <v-img
-                            :src="'/storage/image/blank.png'"
+                            :src="'/storage/images/blank.png'"
                         >
                             <template v-slot:placeholder>
                                 <v-skeleton-loader

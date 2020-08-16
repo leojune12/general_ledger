@@ -23,6 +23,7 @@ class LedgerResource extends JsonResource
             'date_encoded' => $this->date_encoded,
             'account_code' => AccountCode::find($this->account_code_id),
             'project_code' => ProjectCode::find($this->project_code_id),
+            'amount' => $this->amount,
             'description' => $this->description
         ];
     }

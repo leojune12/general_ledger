@@ -21,6 +21,10 @@ Route::middleware('auth:api')->group(function () {
 
     Route::resource('/ledger', 'API\LedgerController');
 
+    Route::resource('/medias', 'API\MediaController');
+
+    Route::get('/medias/download/{id}', 'API\MediaController@download');
+
     Route::resource('/account-codes', 'API\Codes\AccountCodeController');
 
     Route::resource('/project-codes', 'API\Codes\ProjectCodeController');
