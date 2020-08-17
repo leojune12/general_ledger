@@ -174,6 +174,7 @@
                                         label="Amount"
                                         required
                                         type="number"
+                                        :rules="requiredRules"
                                     ></v-text-field>
                                 </v-col>
                                 <v-col cols="12">
@@ -254,7 +255,7 @@
                                         >
                                             <v-spacer></v-spacer>
                                             <v-btn text color="primary" @click="editCalendarDialog = false">Cancel</v-btn>
-                                            <v-btn text color="primary" @click="saveDate(editItem.date_encoded)">OK</v-btn>
+                                            <v-btn text color="primary" @click="saveEditDate">OK</v-btn>
                                         </v-date-picker>
                                     </v-dialog>
                                 </v-col>
@@ -284,6 +285,7 @@
                                         label="Amount"
                                         required
                                         type="number"
+                                        :rules="amountRules"
                                     ></v-text-field>
                                 </v-col>
                                 <v-col cols="12">
@@ -525,9 +527,14 @@
 
         data() {
             return {
+                amountRules: [
+                    v => (v !== null && v !== '' && v !== undefined) || 'This field is required',
+                ],
+
                 requiredRules: [
                     v => !!v || 'This field is required',
                 ],
+
                 descriptionRules: [
                     v => !!v || 'This field is required',
                     v => (v && v.length <= 150) || 'This field must not more than 50 characters',
@@ -714,6 +721,10 @@
                 this.editDialog = false
                 this.$refs.editForm.resetValidation()
                 this.$refs.editForm.reset()
+            },
+
+            saveEditDate() {
+                this.$refs.editDateEncoded.save(this.editItem.date_encoded)
             },
 
             validateEditForm() {

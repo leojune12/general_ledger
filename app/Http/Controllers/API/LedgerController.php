@@ -16,7 +16,11 @@ class LedgerController extends Controller
      */
     public function index()
     {
-        return LedgerResource::collection(Ledger::all()->sortByDesc('created_at'));
+        return LedgerResource::collection(Ledger::all()->sortByDesc('date_encoded'));
+
+        /*$from = date('2020-08-15');
+        $to = date('2020-08-15');
+        return LedgerResource::collection(Ledger::whereBetween('date_encoded', [$from, $to])->get());*/
     }
 
     /**
@@ -39,7 +43,7 @@ class LedgerController extends Controller
     {
         Ledger::create($request->all());
 
-        return LedgerResource::collection(Ledger::all()->sortByDesc('created_at'));
+        return LedgerResource::collection(Ledger::all()->sortByDesc('date_encoded'));
     }
 
     /**
@@ -75,7 +79,7 @@ class LedgerController extends Controller
     {
         $ledger->update($request->all());
 
-        return LedgerResource::collection(Ledger::all()->sortByDesc('created_at'));
+        return LedgerResource::collection(Ledger::all()->sortByDesc('date_encoded'));
     }
 
     /**
@@ -88,6 +92,6 @@ class LedgerController extends Controller
     {
         $ledger->delete();
 
-        return LedgerResource::collection(Ledger::all()->sortByDesc('created_at'));
+        return LedgerResource::collection(Ledger::all()->sortByDesc('date_encoded'));
     }
 }
