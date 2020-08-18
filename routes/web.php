@@ -25,6 +25,10 @@ Route::group(['middleware'=>['auth']], function (){
        return view('ledgers.view-ledgers');
     });
 
+    Route::get('/reports', function () {
+        return view('reports.view-reports');
+    });
+
     Route::get('/account-codes', function () {
         return view('codes.view-account-codes');
     });

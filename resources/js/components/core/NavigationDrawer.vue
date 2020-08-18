@@ -104,7 +104,8 @@
 
             <v-list-item
                 link
-                :class="{ 'v-list-item--active': drawerLinks.dashboard }"
+                :class="{ 'v-list-item--active': drawerLinks.reports }"
+                href="/reports"
                 color="primary"
             >
                 <v-list-item-action>

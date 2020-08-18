@@ -25,6 +25,10 @@ Route::middleware('auth:api')->group(function () {
 
     Route::get('/medias/download/{id}', 'API\MediaController@download');
 
+    Route::resource('reports', 'API\ReportController');
+
+    Route::post('reports-filter', 'API\ReportController@filterData');
+
     Route::resource('/account-codes', 'API\Codes\AccountCodeController');
 
     Route::resource('/project-codes', 'API\Codes\ProjectCodeController');

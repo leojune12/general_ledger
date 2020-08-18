@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9beca4c1-e327-439e-846f-0caa8332e6c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/LedgerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/LedgerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/ledgers/ViewLedgers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/ledgers/ViewLedgers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/core/NavigationDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/core/NavigationDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,6 +22,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -150,11 +166,11 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\development\webFiles\projects\general_ledger\resources\views\auth\default" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\development\webFiles\projects\general_ledger\resources\views\auth" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\development\webFiles\projects\general_ledger\resources\views\auth\default" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -198,7 +214,9 @@
       <workItem from="1597556006947" duration="9273000" />
       <workItem from="1597572191094" duration="2000" />
       <workItem from="1597584229239" duration="989000" />
-      <workItem from="1597642730942" duration="8455000" />
+      <workItem from="1597642730942" duration="9664000" />
+      <workItem from="1597667162811" duration="9833000" />
+      <workItem from="1597708503022" duration="12260000" />
     </task>
     <servers />
   </component>

@@ -23,6 +23,7 @@ Vue.component('miscellaneous', require('./components/core/Miscellaneous').defaul
 
 Vue.component('view-dashboard', require('./views/dashboard/ViewDashboard').default);
 Vue.component('view-ledgers', require('./views/ledgers/ViewLedgers').default);
+Vue.component('view-reports', require('./views/reports/ViewReports').default);
 
 Vue.component('view-account-codes', require('./views/codes/ViewAccountCodes').default);
 Vue.component('view-project-codes', require('./views/codes/ViewProjectCodes').default);

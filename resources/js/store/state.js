@@ -8,6 +8,8 @@ let state = {
 
         ledger: false,
 
+        reports: false,
+
         accountCodes: false,
 
         projectCodes: false,
