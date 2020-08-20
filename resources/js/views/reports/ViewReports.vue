@@ -8,6 +8,21 @@
         >
             <v-card-title>
                 Reports
+                <export-excel
+                    class="ml-2 pa-0"
+                    :data="selected"
+                    :fields="excelFields"
+                    worksheet="Worksheet"
+                    :name="excelFileName"
+                >
+                    <v-btn
+                        color="success"
+                        outlined
+                        :disabled="disableExportButton"
+                    >
+                        <v-icon>mdi-download</v-icon>Export Selected({{ selectedCount }})
+                    </v-btn>
+                </export-excel>
                 <v-spacer></v-spacer>
                 <v-text-field
                     v-model="search"
@@ -19,12 +34,14 @@
                 ></v-text-field>
             </v-card-title>
             <v-data-table
+                v-model="selected"
                 :headers="headers"
                 :items="ledgers"
                 :search="search"
                 :loading="loading"
                 :loading-text="loadingText"
                 class="mb-16"
+                show-select
             >
                 <template v-slot:item.actions="{ item }">
                     <v-menu bottom left>
@@ -347,6 +364,9 @@
 </template>
 
 <script>
+
+    import moment from 'moment'
+
     export default {
         name: "ViewReports",
 
@@ -420,6 +440,16 @@
                     }
                 ],
 
+                excelFields: {
+                    'Date Encoded': 'date_encoded',
+                    'Account Code': 'account_code.description',
+                    'Project Code': 'project_code.description',
+                    'Amount': 'amount',
+                    'Description': 'description'
+                },
+
+                excelFileName: 'ledger_report_'+moment().format('YYYY-MM-DD_hh-mm-ss'),
+
                 ledgers: [],
                 loading: true,
                 loadingText: 'Loading. Please wait...',
@@ -455,6 +485,23 @@
                 filesDialog: false,
                 filesLoading: true,
 
+                selected: [],
+
+            }
+        },
+
+        computed: {
+            disableExportButton() {
+                if (this.selected.length > 0) {
+                    return false
+                } else {
+                    return true
+                }
+
+            },
+
+            selectedCount() {
+                return this.selected.length
             }
         },
 
@@ -531,8 +578,9 @@
                 this.$store.dispatch('OPEN_LOADING_DIALOG')
                 axios.post('/api/reports-filter', this.filter)
                     .then(response => {
+                        //clear selected variable
+                        this.selected = []
                         this.fetchData(response.data.data)
-                        console.log(response.data)
                         this.$store.dispatch('SUCCESS_SNACKBAR', 'Success')
                     })
                     .catch(error => {
@@ -588,6 +636,7 @@
                 document.body.appendChild(link)
                 link.click()
             },
+
         }
     }
 </script>

@@ -6,6 +6,8 @@ use App\Http\Resources\LedgerResource;
 use App\Models\Ledger;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use function GuzzleHttp\Promise\all;
 
 class ReportController extends Controller
 {
@@ -55,6 +57,39 @@ class ReportController extends Controller
 
         //return LedgerResource::collection(Ledger::where('account_code_id', '23')->where('project_code_id', '11')->get());
 
+        if ($request->date_encoded_from) {
+            $date_encoded = array($request->date_encoded_from, $request->date_encoded_to);
+        } else {
+            $date_encoded = false;
+        }
+
+        if ($request->amount_from) {
+            $amount = array($request->amount_from, $request->amount_to);
+        } else {
+            $amount = false;
+        }
+
+        $account_code_id = $request->account_code_id;
+        $project_code_id = $request->project_code_id;
+
+        return LedgerResource::collection(DB::table('ledgers')
+            ->when($date_encoded, function ($query, $date_encoded) {
+                return $query->whereBetween('date_encoded', [date($date_encoded[0]), date($date_encoded[1])]);
+            })
+            ->when($account_code_id, function ($query, $account_code_id) {
+                return $query->where('account_code_id', $account_code_id);
+            })
+            ->when($project_code_id, function ($query, $project_code_id) {
+                return $query->where('project_code_id', $project_code_id);
+            })
+            ->when($amount, function ($query, $amount) {
+                return $query->whereBetween('amount', [$amount[0], $amount[1]]);
+            })
+            ->orderByDesc('date_encoded')
+            ->get()
+        );
+
+        /*
         //1111
         if (($request->date_encoded_from && $request->date_encoded_to) && $request->account_code_id && $request->project_code_id && ($request->amount_from && $request->amount_to)) {
             return LedgerResource::collection(Ledger::whereBetween('date_encoded', [date($request->date_encoded_from), date($request->date_encoded_to)])->where('account_code_id', $request->account_code_id)->where('project_code_id', $request->project_code_id)->whereBetween('amount', [$request->amount_from, $request->amount_to])->get()->sortByDesc('date_encoded'));
@@ -103,6 +138,6 @@ class ReportController extends Controller
         //0000
         } else {
             return LedgerResource::collection(Ledger::all()->sortByDesc('date_encoded'));
-        }
+        }*/
     }
 }

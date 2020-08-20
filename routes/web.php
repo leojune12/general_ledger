@@ -36,4 +36,6 @@ Route::group(['middleware'=>['auth']], function (){
     Route::get('/project-codes', function () {
         return view('codes.view-project-codes');
     });
+
+    Route::post('/export-report', 'API\Export\LedgerExportController@export');
 });

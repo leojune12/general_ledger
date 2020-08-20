@@ -10,6 +10,9 @@ import 'es6-promise/auto';
 import store from "./store/index";
 import vuetify from "../plugins/vuetify";
 import VueRouter from "./routes";
+import excel from 'vue-excel-export'
+
+Vue.use(excel)
 
 //import moment from 'moment'
 //import moment from 'moment-timezone'
